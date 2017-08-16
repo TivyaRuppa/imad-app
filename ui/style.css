@@ -19,4 +19,16 @@ body {
 .img-medium {
     height: 200px;
 }
+.container{
+            max-width: 600px;
+            font-family: comic sans MS;
+            margin: 0 auto;
+            color: blue;
+        }
+        .Tivya{
+            max-width:600px;
+            font-family:san serif;
+            margin: 0 auto;
+            color: Green;
+        }
 
