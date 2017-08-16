@@ -5,7 +5,8 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleone = {
+var articles = {
+ 'article-one' : {
     title: 'Article One | Tivya',
     heading: 'Article One',
     date: '12,August 2017',
@@ -19,7 +20,41 @@ var articleone = {
                 <p>
                     I'm now happy by joining this course and eagerly awaiting to learn more & more stuffs.
                 </p>'`
-}
+},
+ 'article-two' : {
+     title: 'Article Two | Tivya',
+    heading: 'Article Two',
+    date: '15,August 2017',
+    content:`<div>
+                Hi All!!!
+            </div>
+            <div>
+                <p>
+                Today we're celebrating our INDEPENDACE day. It's happy to see all are united by a patriotic feel today.
+            </p>
+            <p>
+                It's also reflecting in every one's whatsapp status! ;)
+            </p>
+            <h3>
+                Wish you all a happy independance day!!!`
+ 
+ },
+'article-three' : {
+    title: 'Article Three | Tivya',
+    heading: 'Article Three',
+    date: '16,August 2017',
+    content:`<div>
+                Hi All!!!
+            </div>
+            <div>
+                <p>
+            This is the third article by me. I'm now able to write the code and make the changes to my article without any refrences.
+        </p>
+        <p>
+            A great development in a short span of time. :)
+        </p>`
+ }
+};
 function createtemplate (data){
     var title = data.title;
     var heading=data.heading;
@@ -60,16 +95,9 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get ('/article-one',function (req, res) {
-    res.send(createtemplate(articleone));
-});
-
-app.get('/article-two',function (req, res){
-    res.sendfile(path.join(__dirname, 'ui', 'Article Two.html'));
-});
-
-app.get('/article-three',function (req, res){
-    res.sendfile(path.join(__dirname, 'ui', 'Article three.html'));
+app.get ('/:articlename',function (req, res) {
+    var articlename = req.params.articlename;
+    res.send(createtemplate(articles[articlename]));
 });
 
 app.get('/ui/style.css', function (req, res) {
