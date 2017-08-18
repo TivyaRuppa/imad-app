@@ -13,7 +13,8 @@ button.onclick = function() {
          var span = document.getElementById('count');
          span.innerHTML = counter.toString();
      }
- }
+     }
+ };
  };
         request.open('GET','http://tivyaruppa93.imad.hasura-app.io', true);
         request.send(null);
