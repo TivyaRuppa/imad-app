@@ -14,9 +14,8 @@ button.onclick = function() {
          span.innerHTML = counter.toString();
      }
      }
- };
- };
-        request.open('GET','http://tivyaruppa93.imad.hasura-app.io', true);
+  };
+        request.open('GET','http://tivyaruppa93.imad.hasura-app.io/counter', true);
         request.send(null);
 };
 var nameinput = document.getElementById('Name');
