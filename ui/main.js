@@ -20,8 +20,8 @@ button.onclick = function() {
 };
 var nameinput = document.getElementById('Name');
 var name = nameinput.value;
-var submit = document.getElementById('submit_btn');
-submit.onclick = function (){
+var Submit = document.getElementById('Submit_btn');
+Submit.onclick = function () {
     var names = [Name1,Name2,Name3,Name4];
     var list = '';
     for(var i=0;i<name.length;i++){
