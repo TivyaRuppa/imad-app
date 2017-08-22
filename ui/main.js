@@ -6,9 +6,9 @@ button.onclick = function() {
  var request = new XMLHttpRequest();
     //capture the response and store it ina variable
  request.onreadystatechange = function() {
-     if(request.readystate === XMLHttpRequest.DONE) {
+     if (request.readystate === XMLHttpRequest.DONE) {
      //take some action
-     if(request.status===200) {
+     if (request.status===200) {
          var counter = request.responseText;
          var span = document.getElementById('count');
          span.innerHTML = counter.toString();
@@ -18,15 +18,3 @@ button.onclick = function() {
         request.open('GET','http://tivyaruppa93.imad.hasura-app.io/counter', true);
         request.send(null);
 };
-var nameinput = document.getElementById('Name');
-var name = nameinput.value;
-var Submit = document.getElementById('Submit_btn');
-Submit.onclick = function () {
-    var names = [Name1,Name2,Name3,Name4];
-    var list = '';
-    for(var i=0;i<name.length;i++){
-        list == '<li>'+names[i]+'</li>';
-    }
-var ul = document.getElementById('namelist');
-ul.innerHTML = list;
-};    
