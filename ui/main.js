@@ -1,6 +1,7 @@
 var button = document.getElementById('counter');
 button.onclick = function(){
-    var request = new XMLHttprequest();
+    var request = new XMLHttpRequest();
+};
     request.onresdystatechange = function (){
       if(request.readystate === XMLHttprequest.DONE){
           if(request.status === 200){
@@ -12,4 +13,3 @@ button.onclick = function(){
     };
   request.open('GET', 'http://tivyaruppa93.imad.hasura-app.io/counter', true);  
   request.send(null);
-};
