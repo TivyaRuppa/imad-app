@@ -118,9 +118,7 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
  
- app.get('/favicon.ico', function(req, res) {
-    res.status(204);
-});
+
 
 
 // Do not change port, otherwise your app won't run on IMAD servers
