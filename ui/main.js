@@ -1,7 +1,7 @@
 var button = document.getElementById('counter');
-counter=0;
-button.onclick = function(){
+
     var request = new XMLHttpResuest();
+    button.onclick = function(){
     request.onreadystatechange = function(){
         if(request.readystate === XMLHttpREquest.DONE){
         if(request.staus === 200){
